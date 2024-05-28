@@ -28,6 +28,9 @@ from app.utils.handlers import (
     log_responses,
 )
 
+import asyncio
+from app.data_processing.database_update import update_database
+
 ################################################################################################
 ################################################################################################
 from fastapi import FastAPI, Depends, HTTPException, Request, status
@@ -37,7 +40,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 ################################################################################################
 
 
-
+update_database()
 
 app = FastAPI()
 
